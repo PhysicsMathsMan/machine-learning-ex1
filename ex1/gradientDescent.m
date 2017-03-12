@@ -14,8 +14,7 @@ for iter = 1:num_iters
     X_col1 = X(:,1);
     X_col2 = X(:,2);
 
-    theta(1,1) = theta(1,1)-(alpha*(1/m)*error' *X_col1);   %Note that error matrix has to be inverted.
-    theta(2,1) = theta(2,1)-(alpha*(1/m)*error' *X_col2);
+    theta = theta-(alpha*(1/m)*(error' *X)');   %Note that error matrix has to be inverted.
 
 
     % Save the cost J in every iteration    
