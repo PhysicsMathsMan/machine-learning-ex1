@@ -11,15 +11,14 @@ J_history = zeros(num_iters, 1);
 for iter = 1:num_iters
     hypothesis = X*theta;
     error = hypothesis-y;
-    X_col1 = X(:,1);
-    X_col2 = X(:,2);
 
     theta = theta-(alpha*(1/m)*(error' *X)');   %Note that error matrix has to be inverted.
-
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
 
 end
-
+%figure
+%fprintf('J_hist is now plotted')    % to visulize how J is reducing
+%plot(J_history);
 end
