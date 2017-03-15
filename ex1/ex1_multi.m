@@ -25,6 +25,8 @@
 %
 
 %% Initialization
+num_iters = 400;
+J_history = zeros(num_iters, 1);
 
 %% ================ Part 1: Feature Normalization ================
 
@@ -40,11 +42,11 @@ y = data(:, 3);
 m = length(y);
 
 % Print out some data points
-fprintf('First 10 examples from the dataset: \n');
-fprintf(' x = [%.0f %.0f], y = %.0f \n', [X(1:10,:) y(1:10,:)]');
+%fprintf('First 10 examples from the dataset: \n');
+%fprintf(' x = [%.0f %.0f], y = %.0f \n', [X(1:10,:) y(1:10,:)]');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%fprintf('Program paused. Press enter to continue.\n');
+%pause;
 
 % Scale features and set them to zero mean
 fprintf('Normalizing Features ...\n');
@@ -53,7 +55,7 @@ fprintf('Normalizing Features ...\n');
 
 % Add intercept term to X
 X = [ones(m, 1) X];
-
+X
 
 %% ================ Part 2: Gradient Descent ================
 
@@ -106,6 +108,7 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+price = [1 1650 3] * theta;
 
 % ============================================================
 

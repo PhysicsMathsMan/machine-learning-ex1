@@ -26,13 +26,12 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = mean(X_norm(:,1:2));   % Finding the mean
+X_norm = X_norm - mu;       % Reducing the mean for X_norm
 
+sigma = std(X_norm(:,1:2)); % Computing standard deviation.
 
-
-
-
-
-
+X_norm = X_norm ./ sigma;    % Final output for X
 
 % ============================================================
 

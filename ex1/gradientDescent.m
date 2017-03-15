@@ -12,7 +12,7 @@ for iter = 1:num_iters
     hypothesis = X*theta;
     error = hypothesis-y;
 
-    theta = theta-(alpha*(1/m)*(error' *X)');   %Note that error matrix has to be inverted.
+    theta = theta-(alpha*(1/m)*(X' * error));   %Note that error matrix has to be inverted.
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
